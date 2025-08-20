@@ -51,10 +51,11 @@ def compare_models():
     svm.fit(X_train, y_train)
     evaluate_model("Support Vector Machine (SVM)", svm, X_test, y_test)
 
-    # 2. CatBoost (как в оригинальной реализации)
+    # 2. CatBoost 
     cb = CatBoostClassifier(iterations=300, depth=6, learning_rate=0.05, l2_leaf_reg=3, verbose=False)
     cb.fit(X_train, y_train)
     evaluate_model("CatBoost", cb, X_test, y_test)
 
 if __name__ == "__main__":
     compare_models()
+
